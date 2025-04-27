@@ -8,28 +8,34 @@ const Login = () => {
 
   const loginHandler = async (e) => {
     e.preventDefault();
-try {
-     const response = await fetch(`${API_URL}/vendor/login`,{
-       method:"POST",
-       headers:{
-         "Content-Type":'application/json'
-       },
-       body:JSON.stringify({email,password})
-     })
-     const data = await response.json();
-     if(response.ok){
-         alert('login succcess');
-         setEmail("");
-         setPassword("");
-         localStorage.setItem('loginToken',data.token);
-         
-     }
-   } 
-   catch (error) {
-     alert("login failed")
-     
-   }
- }
+    try {
+      const response = await fetch(`${API_URL}/vendor/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        alert('Login success');
+        setEmail("");
+        setPassword("");
+        localStorage.setItem('loginToken', data.token);
+      } else {
+        // Server responded with an error
+        alert(data.error || data.message || "Login failed. Please check your credentials.");
+
+      }
+    } catch (error) {
+      // Network error or server down
+      console.error(error);
+      alert("Something went wrong. Please try again later.");
+    }
+  }
+  
 
   return (
     <div className="loginSection">
