@@ -5,6 +5,7 @@ import Login from '../components/forms/Login'
 import Register from '../components/forms/Register'
 import AdddFir from '../components/forms/AddFirm'
 import AddProduct from '../components/forms/AddProduct'
+import { set } from 'mongoose'
 
 
 
@@ -14,17 +15,20 @@ const LandingPage = () => {
     const [showFirm, setShowFirm] = useState(false)
     const [showProduct, setShowProduct] = useState(false)
     
+    
 const showLoginHandler = () => {
   setShowLogin(true )
   setShowRegister(false)
   setShowFirm(false)
   setShowProduct(false)
+
 }
 const showRegisterHandler = () => {
   setShowRegister(true)
   setShowLogin(false)
   setShowFirm(false)
   setShowProduct(false)
+ 
 }
 
 const showFirmHandler = () => {
@@ -32,6 +36,7 @@ const showFirmHandler = () => {
   setShowLogin(false)
   setShowRegister(false)
   setShowProduct(false)
+
 }
 
 const showProductHandler = () => {
@@ -40,6 +45,15 @@ const showProductHandler = () => {
   setShowRegister(false)
   setShowFirm(false)
   setShowLogin(false)
+
+}
+
+const showWelcomeHandler = () => {
+  setShowRegister(true)
+  setShowLogin(false)
+  setShowFirm(false)
+  setShowProduct(false)
+
 }
 
   return (
@@ -51,9 +65,11 @@ const showProductHandler = () => {
             <SideBar showFirmHandler={showFirmHandler} showProductHandler={showProductHandler}/>
             
             {showLogin && <Login/>}
-            {showRegister && <Register/>}
+            {showRegister && <Register showLoginHandler={showLoginHandler}/>}
             {showFirm && <AdddFir/>}
             {showProduct && <AddProduct/>}
+
+            
             
             
             

@@ -1,32 +1,87 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const AddProduct = () => {
+  const [mealType, setMealType] = useState("");
+  const [foodName, setFoodName] = useState("");
+  const [category, setCategory] = useState("");
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+
+    if (!mealType || !foodName || !category || !price || !image) {
+      alert("Please fill out all fields and upload an image.");
+      return;
+    }
+
+    
+    console.log({
+      mealType,
+      foodName,
+      category,
+      price,
+      image
+    });
+
+    alert("Food item added successfully!");
+
+    
+    setMealType("");
+    setFoodName("");
+    setCategory("");
+    setPrice("");
+    setImage(null);
+  };
+
   return (
     <div className="firmSection">
-      <form className="tableForm">
+      <form className="tableForm" onSubmit={handleSubmit}>
         <h3>Add Food Item</h3>
 
         <label htmlFor="mealType">Meal Type</label>
-        <select id="mealType">
-          <option>Breakfast</option>
-          <option>Lunch</option>
-          <option>Dinner</option>
+        <select
+          value={mealType}
+          onChange={(e) => setMealType(e.target.value)}
+        >
+          <option value="">Select Meal Type</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
         </select>
 
-        <label htmlFor="foodName">Food Name</label>
-        <input type="text" id="foodName" placeholder="Enter Food Name" />
+        <label>Food Name</label>
+        <input
+          type="text"
+          value={foodName}
+          onChange={(e) => setFoodName(e.target.value)}
+          placeholder="Enter Food Name"
+        />
 
-        <label htmlFor="category">Category</label>
-        <select id="category">
-          <option>Veg</option>
-          <option>Non-Veg</option>
+        <label>Category</label>
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="">Select Category</option>
+          <option value="Veg">Veg</option>
+          <option value="Non-Veg">Non-Veg</option>
         </select>
 
-        <label htmlFor="price">Price (₹)</label>
-        <input type="text" id="price" placeholder="Enter Price" />
+        <label>Price (₹)</label>
+        <input
+          type="text"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          placeholder="Enter Price"
+        />
 
-        <label htmlFor="imageUpload">Upload Image</label>
-        <input type="file" id="imageUpload" />
+        <label>Upload Image</label>
+        <input
+          type="file"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
 
         <button type="submit">Add Food Item</button>
       </form>
