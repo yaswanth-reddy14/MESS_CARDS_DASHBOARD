@@ -25,12 +25,12 @@ const Login = () => {
         setPassword("");
         localStorage.setItem('loginToken', data.token);
       } else {
-        // Server responded with an error
+        
         alert(data.error || data.message || "Login failed. Please check your credentials.");
 
       }
     } catch (error) {
-      // Network error or server down
+      
       console.error(error);
       alert("Something went wrong. Please try again later.");
     }

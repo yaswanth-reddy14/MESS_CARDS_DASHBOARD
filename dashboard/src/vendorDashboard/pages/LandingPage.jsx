@@ -6,6 +6,7 @@ import Register from '../components/forms/Register'
 import AdddFir from '../components/forms/AddFirm'
 import AddProduct from '../components/forms/AddProduct'
 import { set } from 'mongoose'
+import AddFirm from '../components/forms/AddFirm'
 
 
 
@@ -66,7 +67,7 @@ const showWelcomeHandler = () => {
             
             {showLogin && <Login/>}
             {showRegister && <Register showLoginHandler={showLoginHandler}/>}
-            {showFirm && <AdddFir/>}
+            {showFirm && <AddFirm/>}
             {showProduct && <AddProduct/>}
 
             

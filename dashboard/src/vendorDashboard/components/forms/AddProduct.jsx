@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_URL } from '../../data/apiPath';
 
 const AddProduct = () => {
   const [mealType, setMealType] = useState("");
@@ -7,27 +8,47 @@ const AddProduct = () => {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-
-    if (!mealType || !foodName || !category || !price || !image) {
+    if (!mealType || !foodName || !category || !price ) {
       alert("Please fill out all fields and upload an image.");
       return;
     }
 
-    
-    console.log({
-      mealType,
-      foodName,
-      category,
-      price,
-      image
-    });
+    const firmId = localStorage.getItem("firmId");
+    if (!firmId) {
+      alert("No firm ID found. Please create a firm first.");
+      return;
+    }
 
-    alert("Food item added successfully!");
+    const formData = new FormData();
+    formData.append('product_Name', foodName);
+    formData.append('price', price);
+    formData.append('category', category);
+    formData.append('mealType', mealType);
+    formData.append('image', image);
 
-    
+    try {
+      const response = await fetch(`${API_URL}/product/add-product/${firmId}`, {
+        method: "POST",
+        headers: {
+          'token': `${localStorage.getItem('loginToken')}`
+        },
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert("Food item added successfully!");
+      } else {
+        alert(data.error || "Failed to add food item.");
+      }
+    } catch (error) {
+      console.error("Error while adding food item:", error);
+      alert("Something went wrong. Please try again.");
+    }
+
     setMealType("");
     setFoodName("");
     setCategory("");
@@ -46,9 +67,9 @@ const AddProduct = () => {
           onChange={(e) => setMealType(e.target.value)}
         >
           <option value="">Select Meal Type</option>
-          <option value="Breakfast">Breakfast</option>
-          <option value="Lunch">Lunch</option>
-          <option value="Dinner">Dinner</option>
+          <option value="breakfast">breakfast</option>
+          <option value="lunch">lunch</option>
+          <option value="dinner">dinner</option>  
         </select>
 
         <label>Food Name</label>

@@ -10,12 +10,12 @@ const AddFirm = () => {
 
   const handleImageUpload =(event) => {
     const selectedImage = event.target.files[0];
-    setFile(selectedImage)
-  }
+    setFile(selectedImage);
+  };
+
   const handleFirmSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!messName || !area || !address || !contact) {
       alert("Please fill out all required fields.");
       return;
@@ -41,7 +41,7 @@ const AddFirm = () => {
       const response = await fetch(`${API_URL}/firm/add-firm`, {
         method: "POST",
         headers: {
-          'token': loginToken, // only token here, FormData will auto set 'Content-Type'
+          'token': `${loginToken}` // only token here, FormData will auto set 'Content-Type'
         },
         body: formData
       });
@@ -52,7 +52,9 @@ const AddFirm = () => {
         alert("Mess details added successfully!");
         console.log("Server Response:", data);
 
-        // Clear form
+        // Save firmId in localStorage
+        localStorage.setItem('firmId', data.firmId);
+
         setMessName("");
         setArea("");
         setAddress("");
@@ -61,7 +63,6 @@ const AddFirm = () => {
       } else {
         alert(data.message || "Failed to add mess details. Please try again.");
       }
-
     } catch (error) {
       console.error("Error while adding mess:", error);
       alert("Something went wrong. Please try again later.");
