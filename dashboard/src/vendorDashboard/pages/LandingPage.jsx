@@ -49,13 +49,6 @@ const showProductHandler = () => {
 
 }
 
-const showWelcomeHandler = () => {
-  setShowRegister(true)
-  setShowLogin(false)
-  setShowFirm(false)
-  setShowProduct(false)
-
-}
 
   return (
     <>

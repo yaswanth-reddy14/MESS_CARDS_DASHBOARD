@@ -44,6 +44,7 @@ const Register = ({showLoginHandler}) => {
         setEmail("");
         setPassword("");
         
+        
       } else {
 
         if (data.message === "Email already exists") {
