@@ -7,7 +7,7 @@ const SideBar = ({ showFirmHandler, showProductHandler }) => {
   return (
     <div className="sideBarSection">
       <ul>
-        <li onClick={() => navigate('/show-messes')}>Show Messes</li>
+        <li>Show Messes</li>
         <li onClick={showFirmHandler}>Add Mess</li>
         <li onClick={showProductHandler}>Add Product</li>
         <li>Student Details</li>

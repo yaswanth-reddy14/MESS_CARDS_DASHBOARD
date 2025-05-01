@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
-.navSection{
-   
+
+.navSection {
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -17,11 +17,9 @@ body{
     padding: 20px;
     font-size: large;
     cursor: pointer;
-
 }
 
-.sideBarSection{
-    
+.sideBarSection {
     width: 100%;
     max-width: 15%;
     height: 95vh;
@@ -38,69 +36,58 @@ body{
 }
 
 /* for login */
-/* Main login section */
 .loginSection {
-  
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 0;        /* Remove top space */
-  margin: 0;             /* Remove any margin */
-  min-height: 100vh;
-  background-color: #f7f8fa;
-  
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #f7f8fa;
 }
-  
-  /* Form container */
-  .authForm {
+
+.authForm {
     background: white;
     padding: 40px 30px;
-    padding-top: -200;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     max-width: 400px;
     width: 100%;
     box-sizing: border-box;
     text-align: center;
-  }
-  
-  /* Form title */
-  .authForm h3 {
+}
+
+.authForm h3 {
     font-size: 24px;
     color: #333;
     margin-bottom: 24px;
-  }
-  
-  /* Label styling */
-  .authForm label {
+}
+
+.authForm label {
     display: block;
     text-align: left;
     margin: 12px 0 6px;
     font-weight: 500;
     color: #444;
-    margin-top: 200;
-  }
-  
-  /* Input styling */
-  .authForm input {
+}
+
+.authForm input {
     width: 100%;
     padding: 10px 12px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: border-color 0.3s;
-    
-  }
-  
-  .authForm input:focus {
+}
+
+.authForm input:focus {
     outline: none;
     border-color: #007bff;
-  }
-  
-  /* Submit button */
-  .btnSubmit button {
+}
+
+.btnSubmit button {
     margin-top: 20px;
     width: 100%;
     padding: 12px;
@@ -111,159 +98,194 @@ body{
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .btnSubmit button:hover {
-    background-color: #0056b3;
-  }
-  .collectionSection{
-    display: flex;
-
-  }
-  
-  /* register CSS*/
-
-  /* Wrapper section for register */
-.registerSection {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;   /* align to top */
-  align-items: center;
-  padding-top: 20px;             /* small space from top */
-  margin: 0;
-  min-height: 100vh;
-  background-color: #f7f8fa;
-}
-
-/* Same auth form styling reused */
-.authForm {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  max-width: 400px;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-/* Title */
-.authForm h3 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 24px;
-}
-
-/* Label styling */
-.authForm label {
-  display: block;
-  text-align: left;
-  margin: 12px 0 6px;
-  font-weight: 500;
-  color: #444;
-}
-
-/* Input styling */
-.authForm input {
-  width: 100%;
-  padding: 10px 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s;
-}
-
-.authForm input:focus {
-  outline: none;
-  border-color: #007bff;
-}
-
-/* Submit button */
-.btnSubmit button {
-  margin-top: 20px;
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .btnSubmit button:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
+}
+
+.collectionSection {
+    display: flex;
+}
+
+/* register CSS */
+.registerSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #f7f8fa;
+}
+
+.authForm {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.authForm h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.authForm label {
+    display: block;
+    text-align: left;
+    margin: 12px 0 6px;
+    font-weight: 500;
+    color: #444;
+}
+
+.authForm input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.authForm input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.btnSubmit button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnSubmit button:hover {
+    background-color: #0056b3;
 }
 
 /* CSS for ADD MESS */
-
 .firmSection {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 60px;
-  min-height: 100vh;
-  background-color: #f7f8fa;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    min-height: 100vh;
+    background-color: #f7f8fa;
 }
 
 .tableForm {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  max-width: 400px;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .tableForm h3 {
-  font-size: 24px;
-  color: #1f2937; /* Tailwind slate-800 */
-  margin-bottom: 24px;
+    font-size: 24px;
+    color: #1f2937;
+    margin-bottom: 24px;
 }
 
 .tableForm label {
-  display: block;
-  text-align: left;
-  margin: 12px 0 6px;
-  font-weight: 600;
-  color: #374151; /* Tailwind gray-700 */
+    display: block;
+    text-align: left;
+    margin: 12px 0 6px;
+    font-weight: 600;
+    color: #374151;
 }
 
 .tableForm input {
-  width: 95%;
-  padding: 10px 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s;
-  margin-bottom: 12px;
+    width: 95%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+    margin-bottom: 12px;
 }
 
 .tableForm input:focus {
-  outline: none;
-  border-color: #007bff;
+    outline: none;
+    border-color: #007bff;
 }
 
 .tableForm button {
-  margin-top: 16px;
-  width: 100%;
-  padding: 12px;
-  background-color: #4e28a7; /* green like submit btn */
-  border: none;
-  color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    margin-top: 16px;
+    width: 100%;
+    padding: 12px;
+    background-color: #4e28a7;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .tableForm button:hover {
-  background-color: #218838;
+    background-color: #218838;
 }
 
+/* Firms List */
+.firmsList {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    text-align: left;
+}
+
+.firmsList h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.firmsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.firmsTable th,
+.firmsTable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.firmsTable th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.firmsTable img {
+    max-width: 50px;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+    margin: 10px 0;
+}
